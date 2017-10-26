@@ -61,6 +61,8 @@ git branch -d feature1
 //查看分支合并情况
 git log --graph --pretty=oneline --abbrev-commit
 ```
+![conflicts](https://www.liaoxuefeng.com/files/attachments/001384909115478645b93e2b5ae4dc78da049a0d1704a41000/0)
+
 小结
 --
 - 当git无法自动合并分支时, 就必须解决冲突. 解决冲突后, 提交, 合并完成.
