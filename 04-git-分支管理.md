@@ -67,3 +67,30 @@ git log --graph --pretty=oneline --abbrev-commit
 --
 - 当git无法自动合并分支时, 就必须解决冲突. 解决冲突后, 提交, 合并完成.
 - git log --graph 查看分支合并图
+
+分支管理策略
+--
+通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会 **丢掉** 分支信息。如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以 **看出分支信息** .
+
+```
+git checkout -b dev
+//修改内容, 并提交
+git add readme.md
+git commit -m "add merge"
+//切回master
+git checkout master
+//合并 dev分支到master分支
+git merge --no-ff -m "merge with no-ff" dev
+//本次合并创建一个commit
+//查看历史日志
+git log --graph --pretty=oneline --abbrev-commit
+```
+不使用fast forward模式, 如图
+![no-ff](https://www.liaoxuefeng.com/files/attachments/001384909222841acf964ec9e6a4629a35a7a30588281bb000/0)
+
+实际开发中的分支策略, 如图
+![xx](https://www.liaoxuefeng.com/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0)
+
+小结
+--
+- 合并分支时，加上 **--no-ff** 参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并.
