@@ -86,3 +86,5 @@ git merge --no-ff fixBug-bug版本
 git branch -d fixBug-bug版本
 ```
 
+9. 使用cherry-pick，临时将dev分支上某个或某几个commit提交合并到主分支上
+
