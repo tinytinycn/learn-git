@@ -72,6 +72,7 @@ git log --graph --pretty=oneline --abbrev-commit
 ![no-ff-merge](img/no-ff-merge.png)
 
 8. 修复紧急缺陷BUG分支操作
+
 修复bug分支统一命名：fixBug-bug版本，例如 fixbug-v4.1.1
 ```git
 //从master 分支下，克隆来有bug的分支，在fixbug分支下去修复它，修复好了，再合并到master分支和develop分支，删除该bug分支。
